@@ -6,6 +6,6 @@ feature "Testing player input" do
   scenario "Expect to redirect to /names after player input" do
     visit('/')
     click_button('Submit')
-    expect(current_path).to eq('/names')
+    expect(current_path).to eq('/play')
   end
 end
