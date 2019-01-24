@@ -12,10 +12,7 @@ end
 
 feature "Player Health" do 
   scenario "Show p2 health" do
-    visit('/')
-    fill_in('p1name', with: 'John')
-    fill_in('p2name', with: 'Dave')
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content('HP:60')
   end
 end
