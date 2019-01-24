@@ -1,3 +1,6 @@
 <h1><%=@p1name%></h1>
 <h1>vs</h1>
 <h1><%=@p2name%></h1><h2>HP:<%=@p2health%></h2>
+<form action="/attack">
+    <button name="attackp2" value="<%=@p2health%>">AttackP2</button>
+</form>
