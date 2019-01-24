@@ -20,6 +20,7 @@ end
 get '/play' do
   @p1name = session[:p1name]
   @p2name = session[:p2name]
+  @p2health = 60
   erb(:play)
 end
 
