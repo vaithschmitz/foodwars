@@ -1,10 +1,8 @@
-require 'sinatra'
+require "sinatra/base"
+require_relative "./lib/player"
 
 class Battle < Sinatra::Base
-  attr_reader :names
-
 enable :sessions
-set :session_secret, "secret"
 
 
 get '/' do
@@ -12,26 +10,23 @@ get '/' do
   end
 
 post '/names' do
-  session[:p1name] = params[:p1name]
-  session[:p2name] = params[:p2name]
+  $p1 = Player.new(params[:p1name])
+  $p2 = Player.new(params[:p2name])
   redirect '/play'
 end
 
 get '/play' do
-  @p1name = session[:p1name]
-  @p2name = session[:p2name]
-  @p2health = 60
+  @p1_name = $p1.name
+  @p2_name = $p2.name
+  @p2_health = 60
   erb(:play)
 end
 
 get '/attack' do
-  @p1name = session[:p1name]
-  @p2name = session[:p2name]
+  @p1_name = $p1.name
+  @p2_name = $p2.name
   erb(:attack)
 end
-
-
-
 
 
 
