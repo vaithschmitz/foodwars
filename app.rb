@@ -1,8 +1,16 @@
 require 'sinatra'
 
 class Battle < Sinatra::Base
+  attr_reader :names
+
 get '/' do
-  "Testing infrastructure working!"
+  erb(:index)
+  end
+
+post '/names' do
+  @p1name = params[:p1name]
+  @p2name = params[:p2name]
+  erb(:play)
 end
 
 # start the server if ruby file executed directly
