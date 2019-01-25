@@ -6,10 +6,10 @@ def sign_in_and_play
 end
 
 
-def attackp2
+def attack
   visit('/')
   fill_in('p1name', with: 'John')
   fill_in('p2name', with: 'Dave')
   click_button('Submit')
-  click_button('AttackP2')
+  click_button('Attack')
 end

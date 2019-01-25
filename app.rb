@@ -26,7 +26,7 @@ get '/play' do
 end
 
 post '/attack' do
-  $game.attack($game.p2)
+  $game.attack
   redirect '/play'
 end
 

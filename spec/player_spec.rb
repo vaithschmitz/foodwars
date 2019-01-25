@@ -11,7 +11,7 @@ describe Player do
   end
   context "Attacks" do 
     it "attacking p2 deducts 10 health" do
-      expect{dave.attack(dan)}.to change{dan.health}.by -10
+      expect{dan.deduct}.to change{dan.health}.by -10
     end
   end
 end
