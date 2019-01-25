@@ -11,22 +11,22 @@ get '/' do
   end
 
 post '/names' do
-  $p1 = Player.new(params[:p1name])
-  $p2 = Player.new(params[:p2name])
-  $game = Game.new($p1, $p2)
+  @p1 = Player.new(params[:p1name])
+  @p2 = Player.new(params[:p2name])
+  $game = Game.new(@p1, @p2)
   redirect '/play'
 end
 
 get '/play' do
-  @p1_name = $p1.name
-  @p2_name = $p2.name
-  @p1_health = $p1.health
-  @p2_health = $p2.health
+  @p1_name = $game.p1.name
+  @p2_name = $game.p2.name
+  @p1_health = $game.p1.health
+  @p2_health = $game.p2.health
   erb(:play)
 end
 
 post '/attack' do
-  $game.attack($p2)
+  $game.attack($game.p2)
   redirect '/play'
 end
 
