@@ -6,10 +6,6 @@ class Player
     @health = health
   end
 
-  def attack(player)
-    player.deduct
-  end
- 
   def deduct
     @health -= 10
   end
