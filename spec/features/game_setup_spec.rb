@@ -10,9 +10,10 @@ feature "Testing player input" do
   end
 end
 
-feature "Player Health" do 
-  scenario "Show p2 health" do
-    sign_in_and_play
-    expect(page).to have_content('HP:60')
-  end
-end
+# feature "Player Health" do 
+#   scenario "Show p2 health" do
+#     sign_in_and_play
+#     expect(page).to have_content('HP:60')
+#   end
+# end
+

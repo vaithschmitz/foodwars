@@ -18,14 +18,14 @@ end
 get '/play' do
   @p1_name = $p1.name
   @p2_name = $p2.name
-  @p2_health = 60
+  @p1_health = $p1.health
+  @p2_health = $p2.health
   erb(:play)
 end
 
-get '/attack' do
-  @p1_name = $p1.name
-  @p2_name = $p2.name
-  erb(:attack)
+post '/attack' do
+  $p1.attack($p2)
+  redirect '/play'
 end
 
 
