@@ -1,6 +1,11 @@
+<%if @loser != nil %>
+<h1> loser is <%= @loser %> </h1>
+<% else %>
+<h1><%=@turn%>'s Turn</h1>
 <h1><%=@p1_name%></h1><h2>HP:<%=@p1_health%></h2>
 <h1>vs</h1>
 <h1><%=@p2_name%></h1><h2>HP:<%=@p2_health%></h2>
 <form action="/attack" method="post">
     <button name="attack">Attack</button>
 </form>
+<% end %>

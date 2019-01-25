@@ -22,6 +22,8 @@ get '/play' do
   @p2_name = $game.p2.name
   @p1_health = $game.p1.health
   @p2_health = $game.p2.health
+  @turn = $game.turn.name
+  @loser = $game.loser
   erb(:play)
 end
 

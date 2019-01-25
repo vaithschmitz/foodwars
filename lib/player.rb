@@ -9,4 +9,9 @@ class Player
   def deduct
     @health -= 10
   end
+  
+  def is_dead?
+    @health <= 0 
+  end
+
 end
